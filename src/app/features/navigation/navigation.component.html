@@ -1,0 +1,23 @@
+<div class='navigation flex justify-between pt-2'>
+  <div class='navigation-products flex items-center gap-x-3.5'>
+    <a class='cursor-pointer text-lg text-blue-600 font-semibold'>Ecommerce</a>
+    <a class='cursor-pointer text-blue-600'>Products</a>
+  </div>
+  <div class='navigation-products flex items-center gap-x-6'>
+    <a class='text-blue-600 cursor-pointer'>Cart</a>
+    <button *ngIf='loggedIn else notLoggedInState' mat-mini-fab color="primary" [matMenuTriggerFor]="menu" aria-label="Example icon button with a menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Content Manager</button>
+      <button mat-menu-item>Orders</button>
+      <button mat-menu-item (click)='signOut()'>Sign out</button>
+    </mat-menu>
+    <ng-template #notLoggedInState>
+      <div class='flex gap-x-3.5'>
+        <button routerLink='/auth' mat-button color="primary">Login</button>
+        <button routerLink='/registration' mat-raised-button color="primary">Sign-up</button>
+      </div>
+    </ng-template>
+  </div>
+</div>

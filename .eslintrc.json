@@ -1,0 +1,41 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "ignorePatterns": [
+      "**/*.html"
+    ],
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "change-detection-strategy"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "object-curly-spacing": [
+          "error",
+          "always"
+        ],
+        "change-detection-strategy/on-push": "error"
+    }
+}
