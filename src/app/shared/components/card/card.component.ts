@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, Input} from '@angular/core';
+import {Product} from "../../product";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ecm-card',
@@ -6,6 +8,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardComponent {
-
+export class CardComponent implements OnInit{
+  @Input() product: Product = {} as Product
+  constructor(private router: Router) {
+  }
+  ngOnInit() {
+  }
 }
+
+
