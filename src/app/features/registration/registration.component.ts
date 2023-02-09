@@ -5,20 +5,23 @@ import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { LabelModule } from '@progress/kendo-angular-label';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { IntlModule } from '@progress/kendo-angular-intl';
+
 @Component({
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, DateInputsModule, LabelModule, ButtonsModule, IntlModule ],
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationComponent {
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
-  }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
   public registrationForm = this.fb.nonNullable.group<Registration>({
-    firstName: '',
-    lastName: '',
+    userName: '',
     email: '',
     password: '',
   });
@@ -28,19 +31,6 @@ export class RegistrationComponent {
       this.router.navigate(['./auth']).then();
     });
   }
+
+  public value: any = new Date(2000, 2, 10);
 }
-
-
-//
-// email
-//   :
-//   "ss@gmail.com"
-// firstName
-//   :
-//   "L"
-// lastName
-//   :
-//   "B"
-// password
-//   :
-//   "ss123"

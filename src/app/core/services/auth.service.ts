@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Login } from '../../features/auth/models/login-interface';
+import { Login } from '../../features/login/models/login-interface';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Registration } from '../../features/registration/models/registration-interface';

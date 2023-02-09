@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ecommerceAPI: 'https://seal-app-l3d7u.ondigitalocean.app'
+  ecommerceAPI: 'http://localhost:3000'
 };
 
 /*

@@ -3,12 +3,8 @@
         "browser": true,
         "es2021": true
     },
-    "ignorePatterns": [
-      "**/*.html"
-    ],
     "extends": [
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
+        "plugin:angular/johnpapa"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -16,7 +12,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint",
+        "prettier",
         "change-detection-strategy"
     ],
     "rules": {
